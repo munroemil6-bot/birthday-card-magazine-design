@@ -1,24 +1,26 @@
-// Edit this list to change photo files, descriptions, or captions.
-// Put picture files in the images folder and keep paths in sync.
 const birthdayPhotos = [
-  { file: "images/01-closeup.jpeg", alt: "A close-up portrait of LianaBriele", caption: "A sweet little moment" },
-  { file: "images/02-adventure.jpeg", alt: "LianaBriele smiling in her cap and jacket", caption: "Ready for adventure" },
-  { file: "images/03-cap-pose.jpeg", alt: "LianaBriele posing in her favorite cap", caption: "A little bit of sparkle" },
-  { file: "images/04-park.jpeg", alt: "LianaBriele enjoying a green park", caption: "Out in the sunshine" },
-  { file: "images/05-forest-pose.jpeg", alt: "LianaBriele striking a playful pose outdoors", caption: "Full of personality" },
-  { file: "images/06-forest-smile.jpeg", alt: "LianaBriele smiling among the trees", caption: "A smile to remember" },
-  { file: "images/07-forest-portrait.jpeg", alt: "LianaBriele smiling in the forest", caption: "Simply wonderful" },
-  { file: "images/08-cap-portrait.jpeg", alt: "LianaBriele in her cap and football shirt", caption: "Always shining" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.02 PM (1).jpeg", alt: "Tundo in his graduation cap as a child", caption: "Look how far you’ve come" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.02 PM.jpeg", alt: "A childhood photo of Tundo in a Santa hat", caption: "A little holiday smile" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.03 PM (1).jpeg", alt: "Tundo standing among lush green plants", caption: "Looking sharp in the sunshine" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.03 PM (2).jpeg", alt: "Tundo posing outdoors with his bag", caption: "Out and about" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.03 PM (3).jpeg", alt: "Tundo and Hope smiling together outdoors", caption: "My favorite smile beside mine" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.03 PM.jpeg", alt: "Tundo and Hope making a playful face for the camera", caption: "A little bit of mischief" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.04 PM (1).jpeg", alt: "Tundo and Hope sharing a playful kiss for the camera", caption: "Just us two" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.04 PM.jpeg", alt: "Tundo taking a night-time selfie", caption: "A night to remember" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.16 PM.jpeg", alt: "Tundo smiling in the evening", caption: "Your handsome smile" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.17 PM (1).jpeg", alt: "Tundo taking a selfie with a little one", caption: "A sweet family moment" },
+  { file: "images/WhatsApp Image 2026-11-17 at 7.42.17 PM.jpeg", alt: "Tundo wearing a beanie and smiling for the camera", caption: "Always one of a kind" },
 ];
+const featuredPhotoIndex = 4;
 const featuredImage = document.getElementById("featured-image");
 const gallery = document.getElementById("photo-gallery");
 const wishButton = document.getElementById("wish-button");
 const wish = document.getElementById("birthday-wish");
 birthdayPhotos.forEach((photo, index) => {
   const button = document.createElement("button"); button.type = "button";
-  button.className = `birthday-photo-tile${index === 6 ? " is-featured" : ""}`;
+  button.className = `birthday-photo-tile${index === featuredPhotoIndex ? " is-featured" : ""}`;
   button.setAttribute("aria-label", `Feature photo: ${photo.caption}`);
-  button.setAttribute("aria-pressed", String(index === 6));
+  button.setAttribute("aria-pressed", String(index === featuredPhotoIndex));
   const image = document.createElement("img"); image.src = photo.file; image.alt = photo.alt; image.loading = "lazy";
   const caption = document.createElement("span"); caption.textContent = photo.caption;
   button.append(image, caption);
