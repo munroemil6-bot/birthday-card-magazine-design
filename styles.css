@@ -11,3 +11,87 @@
 .friend-note .eyebrow{margin-bottom:10px}
 .friend-note h2{margin:0 0 12px;font-family:var(--display);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:400;line-height:1.2}
 .friend-note>p:last-child{max-width:620px;margin:0;color:var(--muted);font-size:.98rem;line-height:1.8}
+.birthday-shell{width:100%;margin:0}
+.birthday-masthead{position:absolute;z-index:3;inset:0 0 auto;min-height:76px;justify-content:flex-start;gap:18px;border:0;padding:16px clamp(22px,4vw,56px);color:#fff}
+.masthead-mark{flex:0 0 42px;border-color:#ffffff88;color:#fff;text-decoration:none}
+.masthead-note{color:#fff;font-family:var(--display);font-size:.98rem}
+.masthead-edition{margin-left:auto;color:#fff;font-size:.68rem}
+.birthday-feature{isolation:isolate;display:flex;width:100%;min-height:650px;align-items:center;justify-content:center;overflow:hidden;padding:115px 24px 90px;background:#3a0c1d;text-align:center}
+.birthday-feature::before{position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,#390918b8,#5a0928c9),url("images/WhatsApp Image 2026-11-17 at 7.42.03 PM (3).jpeg") center 43%/cover;content:"";transform:scale(1.015)}
+.hero-copy{width:min(920px,100%);color:#fff}
+.hero-copy .eyebrow{justify-content:center;margin-bottom:24px;color:#ffe4ec;font-size:.92rem;letter-spacing:.03em;text-transform:none}
+.hero-copy h1{margin:0;font-family:var(--display);font-size:clamp(4rem,10vw,8.5rem);font-weight:400;line-height:.96;color:#fff}
+.hero-copy h1 .birthday-name{display:block;margin:0;color:#f5a8c0}
+.birthday-full-name{margin-top:20px;color:#ffe2eb;font-size:1rem}
+.birthday-intro{max-width:600px;margin:24px auto 28px;color:#fff0f4;font-size:1.05rem;line-height:1.75}
+.hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.hero-button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:10px;border:1px solid #ffffff99;border-radius:999px;padding:0 22px;color:#fff;text-decoration:none;font-size:.9rem;font-weight:600;transition:background 180ms ease,transform 180ms ease}
+.hero-button:hover{transform:translateY(-2px);background:#ffffff1a}
+.hero-button-primary{border-color:var(--pink);background:var(--pink)}
+.hero-button-primary:hover{background:#c82f5b}
+.hero-photo-link{position:absolute;bottom:22px;left:50%;color:#fff;text-decoration:none;font-size:.8rem;transform:translateX(-50%)}
+.hero-photo-link span{display:flex;flex-direction:column;align-items:center;gap:5px}
+.hero-sparkle{position:absolute;color:#ffd9e5}
+.hero-sparkle-one{top:18%;left:13%;font-size:1.4rem}
+.hero-sparkle-two{top:28%;right:15%;font-size:1.2rem}
+.photo-story{width:min(1040px,calc(100% - 48px));margin-inline:auto;border:0;padding-block:70px 76px}
+.photo-story-heading{margin-bottom:30px}
+.photo-story-heading .eyebrow{margin-bottom:12px}
+.photo-story-heading h2{font-size:clamp(2.4rem,5vw,4rem)}
+.photo-story-description{margin:14px 0 0;color:var(--muted);font-size:.98rem;line-height:1.6}
+.photo-carousel{display:grid;grid-template-columns:52px minmax(0,1fr) 52px;align-items:center;gap:14px}
+.carousel-featured-photo{position:relative;display:grid;height:clamp(340px,52vw,520px);overflow:hidden;place-items:center;margin:0;border-radius:6px;background:#510d27}
+.carousel-featured-photo img{display:block;width:100%;height:100%;object-fit:contain}
+.carousel-featured-photo figcaption{position:absolute;right:0;bottom:0;left:0;display:flex;justify-content:space-between;padding:18px 22px;background:linear-gradient(transparent,#240512c9);color:#fff;font-size:.88rem;font-weight:600}
+.carousel-arrow{display:grid;width:48px;aspect-ratio:1;place-items:center;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--ink);font-family:var(--display);font-size:2rem;line-height:1;cursor:pointer;transition:background 180ms ease,color 180ms ease}
+.carousel-arrow:hover{border-color:var(--pink);background:var(--pink);color:#fff}
+.carousel-arrow:focus-visible,.hero-button:focus-visible,.masthead-mark:focus-visible,.birthday-photo-tile:focus-visible,.birthday-wish-button:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.photo-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:18px}
+.birthday-photo-tile{overflow:hidden;border:2px solid transparent;border-radius:4px;padding:0;background:#fff}
+.birthday-photo-tile:hover,.birthday-photo-tile.is-featured{border-color:var(--pink);background:var(--pale-pink)}
+.birthday-photo-tile img{aspect-ratio:1;object-fit:cover}
+.hope-note{padding:42px 24px 48px;background:var(--pale-pink);text-align:center}
+.hope-note>.eyebrow{justify-content:center;margin-bottom:10px}
+.hope-note h2{margin:0;font-family:var(--display);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400}
+.hope-note h2 em{color:var(--pink);font-weight:400}
+.hope-note>p:not(.eyebrow){margin:10px 0 20px;color:var(--muted);font-size:.92rem}
+.hope-note .birthday-wish-button{margin-inline:auto}
+.birthday-wish[open]{position:fixed;inset:0;display:grid;width:min(760px,calc(100% - 36px));max-width:none;max-height:min(82vh,800px);margin:auto;border:1px solid var(--line);border-radius:8px;padding:0;background:var(--page);color:var(--ink);box-shadow:0 24px 80px #28081855;animation:arrive 200ms ease-out both}
+.birthday-wish[open]::backdrop{background:#260713bf;backdrop-filter:blur(4px)}
+.hope-letter-content{position:relative;overflow-y:auto;padding:clamp(26px,5vw,54px)}
+.hope-letter-content .eyebrow{margin-bottom:10px}
+.hope-letter-content h2{margin:0 0 22px;font-family:var(--display);font-size:clamp(1.8rem,4vw,2.7rem);font-weight:400;line-height:1.15}
+.hope-letter-content h2 em{color:var(--pink);font-weight:400}
+.hope-letter-content>p:not(.eyebrow){margin:0 0 16px;font-family:var(--body);font-size:1rem;line-height:1.8}
+.hope-letter-content .letter-signoff{margin-top:24px}
+.hope-letter-content .letter-gift{margin-bottom:0;color:var(--pink);font-weight:600}
+.hope-letter-close{position:sticky;z-index:1;top:0;float:right;display:grid;width:38px;aspect-ratio:1;place-items:center;margin:-14px -14px 0 12px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--ink);font-size:1.6rem;line-height:1;cursor:pointer}
+.hope-letter-close:hover{border-color:var(--pink);color:var(--pink)}
+.hope-letter-close:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.friend-note{width:min(820px,calc(100% - 48px));max-width:none;margin:0 auto 72px;border:0;border-top:1px solid var(--line);padding:56px 0 0;text-align:center}
+.friend-note>.eyebrow{justify-content:center}
+.friend-note h2{margin-bottom:20px;font-size:clamp(2.2rem,4vw,3.2rem)}
+.munroe-note{max-width:630px;margin:0 auto 28px;color:var(--muted);font-size:1rem;line-height:1.8}
+.munroe-note p{margin:0}
+.munroe-note .munroe-signature{margin-bottom:8px;color:var(--ink);font-family:var(--display);font-size:1.18rem}
+.friend-note .birthday-wish{max-width:630px;margin:22px auto 0;border-color:var(--pink);padding:8px 0 8px 20px;text-align:left}
+.birthday-footer{padding-inline:20px;text-align:center}
+@media(max-width:760px){
+  .birthday-masthead{min-height:68px;gap:10px;padding-inline:18px}
+  .masthead-mark{width:36px;flex-basis:36px}
+  .masthead-note{max-width:none;font-size:.78rem}
+  .masthead-edition{max-width:100px;font-size:.58rem;text-align:right}
+  .birthday-feature{min-height:610px;padding:110px 20px 82px}
+  .hero-copy h1{font-size:clamp(3.2rem,13vw,5.5rem)}
+  .birthday-intro{font-size:.96rem}
+  .hero-sparkle-one{top:16%;left:8%}
+  .hero-sparkle-two{top:31%;right:8%}
+  .photo-story{width:calc(100% - 36px);padding-block:48px 56px}
+  .photo-carousel{grid-template-columns:38px minmax(0,1fr) 38px;gap:7px}
+  .carousel-arrow{width:36px;font-size:1.6rem}
+  .carousel-featured-photo{height:clamp(280px,90vw,440px)}
+  .carousel-featured-photo figcaption{padding:14px;font-size:.78rem}
+  .photo-gallery{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+  .hope-note{padding:34px 18px 38px}
+  .friend-note{width:calc(100% - 36px);margin-bottom:52px;padding-top:40px}
+}

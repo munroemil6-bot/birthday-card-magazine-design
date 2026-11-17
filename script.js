@@ -11,28 +11,43 @@ const birthdayPhotos = [
   { file: "images/WhatsApp Image 2026-11-17 at 7.42.17 PM (1).jpeg", alt: "Tundo taking a selfie with a little one", caption: "A sweet family moment" },
   { file: "images/WhatsApp Image 2026-11-17 at 7.42.17 PM.jpeg", alt: "Tundo wearing a beanie and smiling for the camera", caption: "Always one of a kind" },
 ];
-const featuredPhotoIndex = 4;
+let featuredPhotoIndex = 4;
 const featuredImage = document.getElementById("featured-image");
 const gallery = document.getElementById("photo-gallery");
+const featuredCaption = document.getElementById("featured-caption");
+const photoPosition = document.getElementById("photo-position");
+const previousPhotoButton = document.getElementById("previous-photo");
+const nextPhotoButton = document.getElementById("next-photo");
 const wishButton = document.getElementById("wish-button");
+const wishCloseButton = document.getElementById("wish-close");
 const wish = document.getElementById("birthday-wish");
+const selectPhoto = (index) => {
+  featuredPhotoIndex = (index + birthdayPhotos.length) % birthdayPhotos.length;
+  const photo = birthdayPhotos[featuredPhotoIndex];
+  featuredImage.src = photo.file;
+  featuredImage.alt = photo.alt;
+  featuredCaption.textContent = photo.caption;
+  photoPosition.textContent = `${String(featuredPhotoIndex + 1).padStart(2, "0")} / ${String(birthdayPhotos.length).padStart(2, "0")}`;
+  gallery.querySelectorAll(".birthday-photo-tile").forEach((tile, tileIndex) => {
+    const selected = tileIndex === featuredPhotoIndex;
+    tile.classList.toggle("is-featured", selected);
+    tile.setAttribute("aria-pressed", String(selected));
+  });
+};
 birthdayPhotos.forEach((photo, index) => {
   const button = document.createElement("button"); button.type = "button";
   button.className = `birthday-photo-tile${index === featuredPhotoIndex ? " is-featured" : ""}`;
-  button.setAttribute("aria-label", `Feature photo: ${photo.caption}`);
+  button.setAttribute("aria-label", `Show photo ${index + 1}: ${photo.caption}`);
   button.setAttribute("aria-pressed", String(index === featuredPhotoIndex));
   const image = document.createElement("img"); image.src = photo.file; image.alt = photo.alt; image.loading = "lazy";
-  const caption = document.createElement("span"); caption.textContent = photo.caption;
-  button.append(image, caption);
-  button.addEventListener("click", () => {
-    featuredImage.src = photo.file; featuredImage.alt = photo.alt;
-    gallery.querySelectorAll(".birthday-photo-tile").forEach((tile) => { tile.classList.remove("is-featured"); tile.setAttribute("aria-pressed", "false"); });
-    button.classList.add("is-featured"); button.setAttribute("aria-pressed", "true");
-  });
+  button.append(image);
+  button.addEventListener("click", () => selectPhoto(index));
   gallery.append(button);
 });
+previousPhotoButton.addEventListener("click", () => selectPhoto(featuredPhotoIndex - 1));
+nextPhotoButton.addEventListener("click", () => selectPhoto(featuredPhotoIndex + 1));
+selectPhoto(featuredPhotoIndex);
 wishButton.addEventListener("click", () => {
-  const open = wishButton.getAttribute("aria-expanded") === "true";
-  wishButton.setAttribute("aria-expanded", String(!open)); wish.hidden = open;
-  wishButton.innerHTML = `<span aria-hidden="true">♡</span> ${open ? "Open your birthday wish" : "Close your birthday wish"}`;
+  wish.showModal();
 });
+wishCloseButton.addEventListener("click", () => wish.close());
